@@ -1,552 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/Logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
     <title>Software Company Website</title>
 
     <!-- font awesome cdn link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- header section starts  -->
-
     <header class="header">
-      <a href="#" class="logo">Software<span>Company</span></a>
-
-      <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#services">services</a>
-        <a href="#projects">projects</a>
-        <a href="#pricing">pricing</a>
-        <a href="#contact">contact</a>
-      </nav>
-
-      <div class="icons">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="info-btn" class="fas fa-info-circle"></div>
-        <div id="search-btn" class="fas fa-search"></div>
-        <div id="login-btn" class="fas fa-user"></div>
-      </div>
-
-      <form action="" class="search-form">
-        <input
-          type="search"
-          name=""
-          placeholder="search here..."
-          id="search-box"
-        />
-        <label for="search-box" class="fas fa-search"></label>
-      </form>
-
-      <form action="" class="login-form">
-        <h3>login form</h3>
-        <input type="email" placeholder="enter your email" class="box" />
-        <input type="password" placeholder="enter your password" class="box" />
-        <div class="flex">
-          <input type="checkbox" name="" id="remember-me" />
-          <label for="remember-me">remember me</label>
-          <a href="#">forgot password?</a>
+        <a href="#" class="logo">ENRCALC<span>Consulting</span></a>
+        <nav class="navbar">
+            <a href="#home" data-key="home">home</a>
+            <a href="#about" data-key="about">about</a>
+            <a href="#services" data-key="services">services</a>
+            <a href="#projects" data-key="projects">projects</a>
+            <a href="#pricing" data-key="pricing">pricing</a>
+            <a href="#contact" data-key="contact">contact</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="info-btn" class="fas fa-info-circle"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="login-btn" class="fas fa-user"></div>
+            <select id="language-select">
+                <option value="en">En</option>
+                <option value="fr">Fr</option>
+            </select>
         </div>
-        <input type="submit" value="login now" class="btn" />
-        <p>don't have an account <a href="#">create one!</a></p>
-      </form>
+        <form action="" class="search-form" onsubmit="handleSearch(event)">
+            <input
+                type="search"
+                name="query"
+                placeholder="Search here..."
+                id="search-box"
+                required
+            />
+          
+        </form>
+        
+        <form action="" class="login-form">
+            <h3 data-key="loginTitle">login form</h3>
+            <input type="email" placeholder="enter your email" class="box" data-key="loginEmailPlaceholder" />
+            <input type="password" placeholder="enter your password" class="box" data-key="loginPasswordPlaceholder" />
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me" />
+                <label for="remember-me" data-key="rememberMe">remember me</label>
+                <a href="#" data-key="forgotPassword">forgot password?</a>
+            </div>
+            <input type="submit" value="login now" class="btn" data-key="loginNow" />
+            <p>don't have an account <a href="#" data-key="createOne">create one!</a></p>
+        </form>
     </header>
 
+    <!-- Language support for RTL (Arabic) -->
+    <style id="rtl-style">
+        body[lang="ar"] {
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+
+    <!-- contact info section starts  -->
     <div class="contact-info">
-      <div id="close-contact-info" class="fas fa-times"></div>
-
-      <div class="info">
-        <i class="fas fa-phone"></i>
-        <h3>phone number</h3>
-        <p>+123-456-7890</p>
-        <p>+111-222-3333</p>
-      </div>
-
-      <div class="info">
-        <i class="fas fa-envelope"></i>
-        <h3>email address</h3>
-        <p>admin@sherwinvishesh.com</p>
-      </div>
-
-      <div class="info">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>office address</h3>
-        <p>tempe, AZ 85281</p>
-      </div>
-
-      <div class="share">
-        <a href="https://www.instagram.com/sherwinvishesh/" class="fab fa-instagram"></a>
-        <a href="https://www.linkedin.com/in/sherwinvishesh" class="fab fa-linkedin"></a>
-      </div>
+        <div id="close-contact-info" class="fas fa-times"></div>
+        <div class="info">
+            <i class="fas fa-phone"></i>
+            <h3 data-key="phoneNumber">phone number</h3>
+            <p>+123-456-7890</p>
+            <p>+111-222-3333</p>
+        </div>
+        <div class="info">
+            <i class="fas fa-envelope"></i>
+            <h3 data-key="emailAddress">email address</h3>
+            <p>admin@sherwinvishesh.com</p>
+        </div>
+        <div class="info">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3 data-key="officeAddress">office address</h3>
+            <p>tempe, AZ 85281</p>
+        </div>
+        <div class="share">
+            <a href="https://www.instagram.com/sherwinvishesh/" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/sherwinvishesh" class="fab fa-linkedin"></a>
+        </div>
     </div>
-
-    <!-- header section ends -->
+    <!-- contact info section ends  -->
 
     <!-- home section starts  -->
-
     <section class="home" id="home">
-      <div class="swiper home-slider">
-        <div class="swiper-wrapper">
-          <section
-            class="swiper-slide slide"
-            style="background: url(images/BG1.png) no-repeat"
-          >
-            <div class="content">
-              <h3>Innovating Your Digital Future</h3>
-              <p>
-                Elevate your business with cutting-edge web development, mobile applications, and AI solutions.
-              </p>
-              <a href="#about" class="btn">get started</a>
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <section class="swiper-slide slide" style="background: url(images/BG1.png) no-repeat">
+                    <div class="content">
+                        <h3 data-key="homeTitle1">Innovating Your Digital Future</h3>
+                        <p data-key="homeText1">Elevate your business with cutting-edge web development, mobile applications, and AI solutions.</p>
+                        <a href="#about" class="btn" data-key="getStarted">get started</a>
+                    </div>
+                </section>
+                <section class="swiper-slide slide" style="background: url(images/BG2.png) no-repeat">
+                    <div class="content">
+                        <h3 data-key="homeTitle2">Where Technology Meets Vision</h3>
+                        <p data-key="homeText2">Tailored IT solutions that fit your unique business needs. Let's build something amazing together.</p>
+                        <a href="#about" class="btn" data-key="getStarted">get started</a>
+                    </div>
+                </section>
             </div>
-          </section>
-
-          <section
-            class="swiper-slide slide"
-            style="background: url(images/BG2.png) no-repeat"
-          >
-            <div class="content">
-              <h3>Where Technology Meets Vision</h3>
-              <p>
-                Tailored IT solutions that fit your unique business needs. Let's build something amazing together.
-              </p>
-              <a href="#about" class="btn">get started</a>
-            </div>
-          </section>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
     </section>
-
-    <!-- home section ends -->
+    <!-- home section ends  -->
 
     <!-- about section starts  -->
-
     <section class="about" id="about">
-      <h1 class="heading">about us</h1>
-
-      <div class="row">
-        <div class="video">
-          <video src="https://www.youtube.com/watch?v=QyhwSYhX09s" loop muted autoplay></video>
+        <h1 class="heading" data-key="aboutUsTitle">about us</h1>
+        <div class="row">
+            <div class="video">
+                <video src="https://www.youtube.com/watch?v=QyhwSYhX09s" loop muted autoplay></video>
+            </div>
+            <div class="content">
+                <h3 data-key="aboutUsSubtitle">We will provide you the best work which you dreamt for!</h3>
+                <p data-key="aboutUsText">At Software Company, we harness the power of technology to create innovative solutions that drive business success. From dynamic websites to transformative mobile apps and cutting-edge AI, we're your partners in navigating the digital landscape</p>
+                <a href="#services" class="btn" data-key="readMore">read more</a>
+            </div>
         </div>
-
-        <div class="content">
-          <h3>We will provide you the best work which you dreamt for!</h3>
-          <p>
-            At Software Company, we harness the power of technology to create innovative solutions that drive business success. From dynamic websites to transformative mobile apps and cutting-edge AI, we're your partners in navigating the digital landscape
-          </p>
-          <a href="#services" class="btn">read more</a>
+        <div class="box-container">
+            <div class="box">
+                <h3 data-key="yearsExperience">15+</h3>
+                <p data-key="experienceText">years of experience</p>
+            </div>
+            <div class="box">
+                <h3 data-key="projectsCompleted">1500+</h3>
+                <p data-key="projectsText">project completed</p>
+            </div>
+            <div class="box">
+                <h3 data-key="satisfiedClients">790+</h3>
+                <p data-key="clientsText">satisfied clients</p>
+            </div>
+            <div class="box">
+                <h3 data-key="activeDevelopers">100+</h3>
+                <p data-key="developersText">active developers</p>
+            </div>
         </div>
-      </div>
-
-      <div class="box-container">
-        <div class="box">
-          <h3>15+</h3>
-          <p>years of experience</p>
-        </div>
-
-        <div class="box">
-          <h3>1500+</h3>
-          <p>project completed</p>
-        </div>
-
-        <div class="box">
-          <h3>790+</h3>
-          <p>satiesfied clients</p>
-        </div>
-
-        <div class="box">
-          <h3>100+</h3>
-          <p>active developers</p>
-        </div>
-      </div>
     </section>
-
-    <!-- about section ends -->
+    <!-- about section ends  -->
 
     <!-- services section starts  -->
-
     <section class="services" id="services">
-      <h1 class="heading">our services</h1>
-
-      <div class="box-container">
-        <div class="box">
-          <img src="images/FACode.png" alt="" />
-          <h3>Custom Web Development</h3>
-          <p>
-            Transformative web designs that elevate your digital presence, ensuring user-friendly experiences across all devices.
-          </p>
+        <h1 class="heading" data-key="ourServicesTitle">our services</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/FACode.png" alt="" />
+                <h3 data-key="webDevelopment">Custom Web Development</h3>
+                <p data-key="webDevelopmentText">Transformative web designs that elevate your digital presence, ensuring user-friendly experiences across all devices.</p>
+            </div>
+            <div class="box">
+                <img src="images/Phone.png" alt="" />
+                <h3 data-key="mobileAppDevelopment">Mobile App Development</h3>
+                <p data-key="mobileAppDevelopmentText">Innovative mobile apps for iOS and Android, tailored to enhance engagement and streamline your business operations.</p>
+            </div>
+            <div class="box">
+                <img src="images/AIndML.png" alt="" />
+                <h3 data-key="aiSolutions">AI & Machine Learning Solutions</h3>
+                <p data-key="aiSolutionsText">Leverage AI and machine learning to unlock data insights, automate processes, and revolutionize your business strategy.</p>
+            </div>
+            <div class="box">
+                <img src="images/Lock.png" alt="" />
+                <h3 data-key="cybersecurity">Cybersecurity Services</h3>
+                <p data-key="cybersecurityText">Comprehensive cybersecurity solutions to protect your digital assets and ensure business continuity against evolving threats.</p>
+            </div>
         </div>
-
-        <div class="box">
-          <img src="images/Phone.png" alt="" />
-          <h3>Mobile App Development</h3>
-          <p>
-            Innovative mobile apps for iOS and Android, tailored to enhance engagement and streamline your business operations.
-          </p>
-        </div>
-
-        <div class="box">
-          <img src="images/AIndML.png" alt="" />
-          <h3>AI & Machine Learning Solutions
-          </h3>
-          <p>
-            Leverage AI and machine learning to unlock data insights, automate processes, and revolutionize your business strategy.
-          </p>
-        </div>
-
-        <div class="box">
-          <img src="images/Lock.png" alt="" />
-          <h3>Cybersecurity Services</h3>
-          <p>
-            Comprehensive cybersecurity solutions to protect your digital assets and ensure business continuity against evolving threats.
-          </p>
-        </div>
-      </div>
     </section>
-
-    <!-- services section ends -->
+    <!-- services section ends  -->
 
     <!-- projects section starts  -->
-
     <section class="projects" id="projects">
-      <h1 class="heading">our projects</h1>
-
-      <div class="box-container">
-        <a href="images/CryptoMining.png" class="box">
-          <div class="image">
-            <img src="images/CryptoMining.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="info">
-              <h3>HashPioneer</h3>
-              <p>crypto mining platform</p>
-            </div>
-            <i class="fas fa-plus"></i>
-          </div>
-        </a>
-
-        
-
-        <a href="images/ChatbotE.png" class="box">
-          <div class="image">
-            <img src="images/ChatbotE.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="info">
-              <h3>Educator</h3>
-              <p>Chatbot for education</p>
-            </div>
-            <i class="fas fa-plus"></i>
-          </div>
-        </a>
-
-        
-
-        <a href="images/BankingS.png" class="box">
-          <div class="image">
-            <img src="images/BankingS.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="info">
-              <h3>NexaBank</h3>
-              <p>e-Banking Software</p>
-            </div>
-            <i class="fas fa-plus"></i>
-          </div>
-        </a>
-      </div>
+        <h1 class="heading" data-key="ourProjectsTitle">our projects</h1>
+        <div class="box-container">
+            <a href="images/CryptoMining.png" class="box">
+                <div class="image">
+                    <img src="images/CryptoMining.png" alt="" />
+                </div>
+                <div class="content">
+                    <div class="info">
+                        <h3 data-key="project1Title">HashPioneer</h3>
+                        <p data-key="project1Description">crypto mining platform</p>
+                    </div>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </a>
+            <a href="images/ChatbotE.png" class="box">
+                <div class="image">
+                    <img src="images/ChatbotE.png" alt="" />
+                </div>
+                <div class="content">
+                    <div class="info">
+                        <h3 data-key="project2Title">Educator</h3>
+                        <p data-key="project2Description">Chatbot for education</p>
+                    </div>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </a>
+            <a href="images/BankingS.png" class="box">
+                <div class="image">
+                    <img src="images/BankingS.png" alt="" />
+                </div>
+                <div class="content">
+                    <div class="info">
+                        <h3 data-key="project3Title">NexaBank</h3>
+                        <p data-key="project3Description">e-Banking Software</p>
+                    </div>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </a>
+        </div>
     </section>
-
-    <!-- projects section ends -->
+    <!-- projects section ends  -->
 
     <!-- reviews section starts  -->
-
     <section class="reviews">
-      <h1 class="heading">clients reviews</h1>
-
-      <div class="swiper reviews-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              unde suscipit quis consequuntur, tempora corporis ex molestias
-              dignissimos in cumque sunt ducimus voluptate inventore harum earum
-              rem aperiam vel modi?
-            </p>
-            <div class="user">
-              <img src="images/pic-1.png" alt="" />
-              <div class="info">
-                <h3>john deo</h3>
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+        <h1 class="heading" data-key="clientsReviewsTitle">clients reviews</h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                    <p data-key="review1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis unde suscipit quis consequuntur, tempora corporis ex molestias dignissimos in cumque sunt ducimus voluptate inventore harum earum rem aperiam vel modi?</p>
+                    <div class="user">
+                        <img src="images/pic-1.png" alt="" />
+                        <div class="info">
+                            <h3 data-key="reviewer1Name">john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide slide">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              unde suscipit quis consequuntur, tempora corporis ex molestias
-              dignissimos in cumque sunt ducimus voluptate inventore harum earum
-              rem aperiam vel modi?
-            </p>
-            <div class="user">
-              <img src="images/pic-2.png" alt="" />
-              <div class="info">
-                <h3>doe deo</h3>
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                <div class="swiper-slide slide">
+                    <p data-key="review2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis unde suscipit quis consequuntur, tempora corporis ex molestias dignissimos in cumque sunt ducimus voluptate inventore harum earum rem aperiam vel modi?</p>
+                    <div class="user">
+                        <img src="images/pic-2.png" alt="" />
+                        <div class="info">
+                            <h3 data-key="reviewer2Name">doe deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide slide">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              unde suscipit quis consequuntur, tempora corporis ex molestias
-              dignissimos in cumque sunt ducimus voluptate inventore harum earum
-              rem aperiam vel modi?
-            </p>
-            <div class="user">
-              <img src="images/pic-3.png" alt="" />
-              <div class="info">
-                <h3>andrew deo</h3>
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                <div class="swiper-slide slide">
+                    <p data-key="review3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis unde suscipit quis consequuntur, tempora corporis ex molestias dignissimos in cumque sunt ducimus voluptate inventore harum earum rem aperiam vel modi?</p>
+                    <div class="user">
+                        <img src="images/pic-3.png" alt="" />
+                        <div class="info">
+                            <h3 data-key="reviewer3Name">andrew deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <!-- More reviews -->
             </div>
-          </div>
-
-          <div class="swiper-slide slide">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              unde suscipit quis consequuntur, tempora corporis ex molestias
-              dignissimos in cumque sunt ducimus voluptate inventore harum earum
-              rem aperiam vel modi?
-            </p>
-            <div class="user">
-              <img src="images/pic-4.png" alt="" />
-              <div class="info">
-                <h3>john deo</h3>
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide slide">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              unde suscipit quis consequuntur, tempora corporis ex molestias
-              dignissimos in cumque sunt ducimus voluptate inventore harum earum
-              rem aperiam vel modi?
-            </p>
-            <div class="user">
-              <img src="images/pic-5.png" alt="" />
-              <div class="info">
-                <h3>john deo</h3>
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide slide">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              unde suscipit quis consequuntur, tempora corporis ex molestias
-              dignissimos in cumque sunt ducimus voluptate inventore harum earum
-              rem aperiam vel modi?
-            </p>
-            <div class="user">
-              <img src="images/pic-6.png" alt="" />
-              <div class="info">
-                <h3>john deo</h3>
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
-
-    <!-- reviews section ends -->
+    <!-- reviews section ends  -->
 
     <!-- pricing section starts  -->
-
     <section class="pricing" id="pricing">
-      <h1 class="heading">our pricing</h1>
-
-      <div class="box-container">
-        <div class="box">
-          <i class="fas fa-home"></i>
-          <h3>basic plan</h3>
-          <div class="price"><span>$</span>250<span>/mo</span></div>
-          <div class="list">
-            <p>Standard development tools</p>
-            <p>Monthly site updates</p>
-            <p>Basic security alerts</p>
-            <p>Email support</p>
-            <p>Analytics dashboard access</p>
-          </div>
-          <a href="#" class="btn">choose plan</a>
+        <h1 class="heading" data-key="ourPricingTitle">our pricing</h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-home"></i>
+                <h3 data-key="basicPlan">basic plan</h3>
+                <div class="price"><span>$</span>250<span>/mo</span></div>
+                <div class="list">
+                    <p data-key="basicPlanFeature1">Standard development tools</p>
+                    <p data-key="basicPlanFeature2">Monthly site updates</p>
+                    <p data-key="basicPlanFeature3">Basic security alerts</p>
+                    <p data-key="basicPlanFeature4">Email support</p>
+                    <p data-key="basicPlanFeature5">Analytics dashboard access</p>
+                </div>
+                <a href="#" class="btn" data-key="choosePlan">choose plan</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-building"></i>
+                <h3 data-key="premiumPlan">premium plan</h3>
+                <div class="price"><span>$</span>650<span>/mo</span></div>
+                <div class="list">
+                    <p data-key="premiumPlanFeature1">Custom development hours</p>
+                    <p data-key="premiumPlanFeature2">Enhanced security reports</p>
+                    <p data-key="premiumPlanFeature3">Priority support access</p>
+                    <p data-key="premiumPlanFeature4">Advanced AI tools</p>
+                    <p data-key="premiumPlanFeature5">Bi-weekly optimizations</p>
+                </div>
+                <a href="#" class="btn" data-key="choosePlan">choose plan</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-city"></i>
+                <h3 data-key="ultimatePlan">ultimate plan</h3>
+                <div class="price"><span>$</span>1250<span>/mo</span></div>
+                <div class="list">
+                    <p data-key="ultimatePlanFeature1">Dedicated development team</p>
+                    <p data-key="ultimatePlanFeature2">Comprehensive security suite</p>
+                    <p data-key="ultimatePlanFeature3">24/7 priority support</p>
+                    <p data-key="ultimatePlanFeature4">Monthly strategic sessions</p>
+                    <p data-key="ultimatePlanFeature5">Custom AI development</p>
+                </div>
+                <a href="#" class="btn" data-key="choosePlan">choose plan</a>
+            </div>
         </div>
-
-        <div class="box">
-          <i class="fas fa-building"></i>
-          <h3>premium plan</h3>
-          <div class="price"><span>$</span>650<span>/mo</span></div>
-          <div class="list">
-            <p>Custom development hours</p>
-            <p>Enhanced security reports</p>
-            <p>Priority support access</p>
-            <p>Advanced AI tools</p>
-            <p>Bi-weekly optimizations</p>
-          </div>
-          <a href="#" class="btn">choose plan</a>
-        </div>
-
-        <div class="box">
-          <i class="fas fa-city"></i>
-          <h3>ultimate plan</h3>
-          <div class="price"><span>$</span>1250<span>/mo</span></div>
-          <div class="list">
-            <p>Dedicated development team</p>
-            <p>Comprehensive security suite</p>
-            <p>24/7 priority support</p>
-            <p>Monthly strategic sessions</p>
-            <p>Custom AI development</p>
-
-          </div>
-          <a href="#" class="btn">choose plan</a>
-        </div>
-      </div>
     </section>
-
-    <!-- pricing section ends -->
+    <!-- pricing section ends  -->
 
     <!-- contact section starts  -->
-
     <section class="contact" id="contact">
-      <h1 class="heading">contact us</h1>
-
-      <div class="row">
-        <iframe
-          class="map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106598.4289583495!2d-111.92810105000001!3d33.3919224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0898a6aa80e3%3A0xa2dd4aad392cb41f!2sTempe%2C%20AZ!5e0!3m2!1sen!2sus!4v1706301453151!5m2!1sen!2sus"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-
-        <form action="">
-          <h3>get in touch</h3>
-          <input type="text" placeholder="name" class="box" />
-          <input type="email" placeholder="email" class="box" />
-          <input type="number" placeholder="phone" class="box" />
-          <textarea
-            name=""
-            placeholder="message"
-            class="box"
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input type="submit" value="send message" class="btn" />
-        </form>
-      </div>
+        <h1 class="heading" data-key="contactUsTitle">contact us</h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106598.4289583495!2d-111.92810105000001!3d33.3919224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0898a6aa80e3%3A0xa2dd4aad392cb41f!2sTempe%2C%20AZ!5e0!3m2!1sen!2sus!4v1706301453151!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            <form action="">
+                <h3 data-key="getInTouch">get in touch</h3>
+                <input type="text" placeholder="name" class="box" data-key="contactNamePlaceholder" />
+                <input type="email" placeholder="email" class="box" data-key="contactEmailPlaceholder" />
+                <input type="number" placeholder="phone" class="box" data-key="contactPhonePlaceholder" />
+                <textarea name="" placeholder="message" class="box" id="" cols="30" rows="10" data-key="contactMessagePlaceholder"></textarea>
+                <input type="submit" value="send message" class="btn" data-key="sendMessage" />
+            </form>
+        </div>
     </section>
-
-    <!-- contact section ends -->
-
-    
+    <!-- contact section ends  -->
 
     <!-- footer section starts  -->
-
     <section class="footer">
-      <div class="links">
-        <a class="btn" href="#home">home</a>
-        <a class="btn" href="#about">about</a>
-        <a class="btn" href="#services">services</a>
-        <a class="btn" href="#projects">projects</a>
-        <a class="btn" href="#pricing">pricing</a>
-        <a class="btn" href="#contact">contact</a>
-      </div>
-
-      <div class="credit">
-        created by
-        
-          <span>Sherwin Vishesh Jathanna</span>
-        
-        | all rights reserved!
-      </div>
+        <div class="links">
+            <a class="btn" href="#home" data-key="home">home</a>
+            <a class="btn" href="#about" data-key="about">about</a>
+            <a class="btn" href="#services" data-key="services">services</a>
+            <a class="btn" href="#projects" data-key="projects">projects</a>
+            <a class="btn" href="#pricing" data-key="pricing">pricing</a>
+            <a class="btn" href="#contact" data-key="contact">contact</a>
+        </div>
+        <div class="credit">
+            created by <span data-key="creatorName">Sherwin Vishesh Jathanna</span> | all rights reserved!
+        </div>
     </section>
-
-    <!-- footer section ends -->
+    <!-- footer section ends  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
-
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
 
     <script>
-      lightGallery(document.querySelector(".projects .box-container"));
+
     </script>
-  </body>
+</body>
 </html>
