@@ -107,7 +107,7 @@ section {
 }
 
 .header .logo {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: var(--black);
   text-transform: capitalize;
 }
@@ -182,16 +182,8 @@ section {
   color: var(--light-color);
 }
 
-.header .search-form label {
-  font-size: 2.5rem;
-  color: var(--black);
-  cursor: pointer;
-  margin: 0 1rem;
-}
 
-.header .search-form label:hover {
-  color: var(--yellow);
-}
+
 
 .header .login-form {
   position: absolute;
@@ -960,4 +952,15 @@ section {
   .about .row .content h3 {
     font-size: 2.5rem;
   }
+}
+.search-form-visible {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+.highlight {
+  background-color: red;
+  color: yellowgreen;
 }
